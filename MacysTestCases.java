@@ -24,10 +24,12 @@ public class MacysTestCases
 		System.setProperty("webdriver.gecko.driver", "C:\\Users\\Rajneesh Mehta\\Desktop\\Selenium\\gecko\\geckodriver.exe");
 		String url= "https://www.macys.com/";
 		driver.get(url);
-		hp=new HomePage(driver);
-		rp=new ResultPage(driver);
 		ip= new ItemPage(driver);
 		bp=new BagPage(driver);
+		
+		hp=new HomePage(driver);
+		rp=new ResultPage(driver);
+		
 		sp= new ShoppingBagPage(driver);
 		ap=new AccountPage(driver);	
 		pp= new PlaceOrderPage(driver);
@@ -43,7 +45,7 @@ public class MacysTestCases
 			int expectedCount= rp.expectedItemCount(driver);	//get no. of items expected
 			int [] resultArray= rp.resultItemCount(driver);//get actual item count	
 			assertEquals(expectedCount,resultArray[1]);	// verify if expected is same as actual
-					
+					//assert
 		}
 		catch(Exception e)
 		{
